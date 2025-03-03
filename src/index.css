@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.page-container {
+  @apply mx-20;
+}

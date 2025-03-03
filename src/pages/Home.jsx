@@ -1,15 +1,17 @@
 import MostPicked from '../components/MostPicked';
-import BackYard from '../components/BackYard';
-import HotelsWithLivingRoom from '../components/HotelsWithLivingRoom';
-import ApartmentWithKitchen from '../components/ApartmentWithKitchen';
+import BackYard from './BackYard';
+import HotelWithLivingRoom from './HotelWithLivingRoom';
+import ApartmentWithKitchen from './ApartmentWithKitchen';
 import HappyFamily from '../components/HappyFamily';
+import HeroSection from '../components/HeroSection';
 
 const Home = () => {
   return (
-    <div>
+    <div className="px-20">
+      <HeroSection />
       <MostPicked />
       <BackYard />
-      <HotelsWithLivingRoom />
+      <HotelWithLivingRoom />
       <ApartmentWithKitchen />
       <HappyFamily />
     </div>

@@ -1,7 +1,7 @@
 const MostPicked = () => {
   return (
-    <div className="w-full mx-auto">
-      <section className="relative mt-10 mb-0 mx-10 md:mx-auto lg:mx-10 max-w-full">
+    <div className="w-full mx-auto px-20">
+      <section className="relative mt-10 mb-0 max-w-full">
         <h4 className="text-2xl font-medium text-left text-[#152C5B]">Most Picked</h4>
         <div className="mt-16 lg:mt-8 lg:flex lg:space-x-4">
           {/* Main Image */}
