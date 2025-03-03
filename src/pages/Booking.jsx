@@ -1,8 +1,8 @@
-import BookingLog from '../components/BookingLog';
-import Buttons from '../components/Buttons';
-import Circle from '../components/Circle';
-import ClientInfo from '../components/ClientInfo';
-import PropertyClient from '../components/PropertyClient';
+import BookingLog from "../components/BookingLog";
+import Buttons from "../components/Buttons";
+import Circle from "../components/Circle";
+import ClientInfo from "../components/ClientInfo";
+import PropertyClient from "../components/PropertyClient";
 
 const Booking = () => {
   return (

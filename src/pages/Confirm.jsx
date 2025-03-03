@@ -1,7 +1,7 @@
-import TransactionComplete from '../components/TransactionComplete';
-import PaymentReceipt from '../components/PaymentReceipt';
-import BackHomeButton from '../components/BackHomeButton';
-import StepConfirm from '../components/StepConfirm';
+import TransactionComplete from "../components/TransactionComplete";
+import PaymentReceipt from "../components/PaymentReceipt";
+import BackHomeButton from "../components/BackHomeButton";
+import StepConfirm from "../components/StepConfirm";
 
 const Confirm = () => {
   return (

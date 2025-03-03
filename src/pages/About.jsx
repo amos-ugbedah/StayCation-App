@@ -1,9 +1,9 @@
-import Breadcrumb from '../components/Breadcrumb';
-import Gallery from '../components/Gallery';
-import AboutPlace from '../components/AboutPlace';
-import BookingSection from '../components/BookingSection';
-import ThingsToDo from '../components/ThingsToDo';
-import HappyFamily1 from '../components/HappyFamily1';
+import Breadcrumb from "../components/Breadcrumb";
+import Gallery from "../components/Gallery";
+import AboutPlace from "../components/AboutPlace";
+import BookingSection from "../components/BookingSection";
+import ThingsToDo from "../components/ThingsToDo";
+import HappyFamily1 from "../components/HappyFamily1";
 
 const About = () => {
   return (

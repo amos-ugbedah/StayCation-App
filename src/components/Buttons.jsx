@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Buttons = () => {
   const navigate = useNavigate();
 
   const handleContinue = () => {
-    navigate('/payment');
+    navigate("/payment");
   };
 
   const handleCancel = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (

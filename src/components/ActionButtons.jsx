@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const ActionButtons = () => {
   const navigate = useNavigate();
 
   const handleConfirm = () => {
-    navigate('/confirm');
+    navigate("/confirm");
   };
 
   const handleCancel = () => {

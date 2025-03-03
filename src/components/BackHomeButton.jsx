@@ -1,10 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const BackHomeButton = () => {
   const navigate = useNavigate();
 
   const handleBackHome = () => {
-    navigate('/');
+    navigate("/");
   };
 
   return (
