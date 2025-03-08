@@ -5,25 +5,32 @@ import About from "./pages/About";
 import Booking from "./pages/Booking";
 import Payment from "./pages/Payment";
 import Confirm from "./pages/Confirm";
-import BackYard from "./pages/BackYard";
-import ApartmentWithKitchen from "./pages/ApartmentWithKitchen";
-import HotelWithLivingRoom from "./pages/HotelWithLivingRoom";
+import PropertySection from "./components/PropertySection";
+import PropertyDetail from "./pages/PropertyDetail"; // Import PropertyDetail page
+import ErrorBoundary from "./components/ErrorBoundary"; // Import ErrorBoundary
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/booking" element={<Booking />} />
-          <Route path="/payment" element={<Payment />} />
-          <Route path="/confirm" element={<Confirm />} />
-          <Route path="/backyard" element={<BackYard />} />
-          <Route path="/apartment-with-kitchen" element={<ApartmentWithKitchen />} />
-          <Route path="/hotel-with-living-room" element={<HotelWithLivingRoom />} />
-        </Routes>
-      </Layout>
+      <ErrorBoundary>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/booking" element={<Booking />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/confirm" element={<Confirm />} />
+
+            {/* Property Sections */}
+            <Route path="/backyard" element={<PropertySection category="backyard" />} />
+            <Route path="/apartment-with-kitchen" element={<PropertySection category="kitchen" />} />
+            <Route path="/hotel-with-living-room" element={<PropertySection category="livingRoom" />} />
+
+            {/* Dynamic Route for Property Details */}
+            <Route path="/property/:propertyName" element={<PropertyDetail />} />
+          </Routes>
+        </Layout>
+      </ErrorBoundary>
     </Router>
   );
 }

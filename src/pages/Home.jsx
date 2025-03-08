@@ -1,20 +1,19 @@
-import MostPicked from '../components/MostPicked';
-import BackYard from './BackYard';
-import HotelWithLivingRoom from './HotelWithLivingRoom';
-import ApartmentWithKitchen from './ApartmentWithKitchen';
-import HappyFamily from '../components/HappyFamily';
-import HeroSection from '../components/HeroSection';
+import HeroSection from "../components/HeroSection";
+import MostPicked from "../components/MostPicked";
+import HappyFamily from "../components/HappyFamily";
+import PropertySection from "../components/PropertySection";
+import happyFamilyData from "../constants/happyFamilyData"; // ✅ Import constant data
 
 const Home = () => {
   return (
-    <div className="px-20">
+    <main className="px-20 space-y-10">
       <HeroSection />
-      <MostPicked />
-      <BackYard />
-      <HotelWithLivingRoom />
-      <ApartmentWithKitchen />
-      <HappyFamily />
-    </div>
+      <MostPicked /> {/* ✅ Shows "Most Picked" section */}
+      <PropertySection /> {/* ✅ Displays property listings */}
+
+      {/* ✅ Renders "Happy Family" section only if data is available */}
+      {happyFamilyData?.home && <HappyFamily {...happyFamilyData.home} />}
+    </main>
   );
 };
 

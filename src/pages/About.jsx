@@ -3,7 +3,8 @@ import Gallery from "../components/Gallery";
 import AboutPlace from "../components/AboutPlace";
 import BookingSection from "../components/BookingSection";
 import ThingsToDo from "../components/ThingsToDo";
-import HappyFamily1 from "../components/HappyFamily1";
+import HappyFamily from "../components/HappyFamily";
+import happyFamilyData from "../constants/happyFamilyData"; // ✅ Import the constant data
 
 const About = () => {
   return (
@@ -28,9 +29,9 @@ const About = () => {
           <ThingsToDo />
         </div>
       </section>
-      <section className="w-full h-auto relative ml-2 mb-0 mt-24">
-        <HappyFamily1 />
-      </section>
+
+      {/* ✅ About HappyFamily Section */}
+      <HappyFamily {...happyFamilyData.about} />
     </main>
   );
 };

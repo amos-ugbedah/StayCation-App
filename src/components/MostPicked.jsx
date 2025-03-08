@@ -1,4 +1,43 @@
 const MostPicked = () => {
+  const properties = [
+    {
+      id: 1,
+      name: "Finns Beach Club",
+      location: "Denpasar, Bali",
+      price: 50,
+      image: "/images/finns.svg",
+      isMain: true,
+    },
+    {
+      id: 2,
+      name: "Montigo Resort",
+      location: "Rio De Janeiro, Brazil",
+      price: 22,
+      image: "/images/Rio.svg",
+    },
+    {
+      id: 3,
+      name: "Montana Bay",
+      location: "Berlin, Germany",
+      price: 858,
+      image: "/images/Montana.svg",
+    },
+    {
+      id: 4,
+      name: "Kalpa Tree",
+      location: "Ternate, Nusa Tenggara Barat",
+      price: 62,
+      image: "/images/Knipa.svg",
+    },
+    {
+      id: 5,
+      name: "Caesar Palace",
+      location: "Las Vegas, America",
+      price: 72,
+      image: "/images/caesar.svg",
+    },
+  ];
+
   return (
     <div className="w-full mx-auto px-20">
       <section className="relative mt-10 mb-0 max-w-full">
@@ -7,103 +46,54 @@ const MostPicked = () => {
         </h4>
         <div className="mt-16 lg:mt-8 lg:flex lg:space-x-4">
           {/* Main Image */}
-          <div className="relative w-full lg:w-[360px] lg:h-[460px]">
-            <img
-              src="/images/finns.svg"
-              className="w-full h-full object-cover rounded-[15px]"
-              alt="finns"
-            />
-            <p className="absolute top-0 right-0 p-2 text-sm font-medium leading-none text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
-              $50 per night
-            </p>
-            <div className="absolute bottom-4 left-4">
-              <p className="text-lg font-medium leading-none text-left text-[#152C5B]">
-                Finns Beach Club
+          {properties.filter((prop) => prop.isMain).map((mainProp) => (
+            <div key={mainProp.id} className="relative w-full lg:w-[360px] lg:h-[460px]">
+              <img
+                src={mainProp.image}
+                className="w-full h-full object-cover rounded-[15px]"
+                alt={mainProp.name}
+              />
+              <p className="absolute top-0 right-0 p-2 text-sm font-medium text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
+                ${mainProp.price} per night
               </p>
-              <p className="mt-1 text-sm font-light leading-none text-left text-[#152C5B]">
-                Denpasar, Bali
-              </p>
+              <div className="absolute bottom-4 left-4">
+                <p className="text-lg font-medium text-left text-[#152C5B]">
+                  {mainProp.name}
+                </p>
+                <p className="mt-1 text-sm font-light text-left text-[#152C5B]">
+                  {mainProp.location}
+                </p>
+              </div>
             </div>
-          </div>
+          ))}
 
           {/* Additional Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 lg:mt-0 lg:flex-1">
-            {/* img1 */}
-            <div className="relative w-full h-[215px] bg-gradient-to-b from-transparent via-[rgba(196,196,196,0.5)] to-[rgba(196,196,196,0.5)] rounded-[15px]">
-              <img
-                src="/images/Rio.svg"
-                className="absolute inset-0 w-full h-full rounded-[15px] object-cover"
-                alt="Rio"
-              />
-              <p className="absolute top-0 right-0 p-2 text-sm font-medium leading-none text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
-                $22 per night
-              </p>
-              <div className="absolute bottom-4 left-4">
-                <p className="text-lg font-medium leading-none text-left text-[#152C5B]">
-                  Montigo Resort
-                </p>
-                <p className="mt-1 text-sm font-light leading-none text-left text-[#152C5B]">
-                  Rio De Janeiro, Brazil
-                </p>
-              </div>
-            </div>
-            {/* img2 */}
-            <div className="relative w-full h-[215px] bg-gradient-to-b from-transparent via-[rgba(196,196,196,0.5)] to-[rgba(196,196,196,0.5)] rounded-[15px]">
-              <img
-                src="/images/Montana.svg"
-                className="absolute inset-0 w-full h-full rounded-[15px] object-cover"
-                alt="Montana"
-              />
-              <p className="absolute top-0 right-0 p-2 text-sm font-medium leading-none text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
-                $858 per night
-              </p>
-              <div className="absolute bottom-4 left-4">
-                <p className="text-lg font-medium leading-none text-left text-[#152C5B]">
-                  Montana Bay
-                </p>
-                <p className="mt-1 text-sm font-light leading-none text-left text-[#152C5B]">
-                  Berlin, Germany
-                </p>
-              </div>
-            </div>
-            {/* img3 */}
-            <div className="relative w-full h-[215px] mt-10 lg:mt-0 bg-gradient-to-b from-transparent via-[rgba(196,196,196,0.5)] to-[rgba(196,196,196,0.5)] rounded-[15px]">
-              <img
-                src="/images/Knipa.svg"
-                className="absolute inset-0 w-full h-full rounded-[15px] object-cover"
-                alt="Kalpa"
-              />
-              <p className="absolute top-0 right-0 p-2 text-sm font-medium leading-none text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
-                $62 per night
-              </p>
-              <div className="absolute bottom-4 left-4">
-                <p className="text-lg font-medium leading-none text-left text-[#152C5B]">
-                  Kalpa Tree
-                </p>
-                <p className="mt-1 text-sm font-light leading-none text-left text-[#152C5B]">
-                  Ternate, Nusa Tenggara Barat
-                </p>
-              </div>
-            </div>
-            {/* img4 */}
-            <div className="relative w-full h-[215px] mt-10 lg:mt-0 bg-gradient-to-b from-transparent via-[rgba(196,196,196,0.5)] to-[rgba(196,196,196,0.5)] rounded-[15px]">
-              <img
-                src="/images/caesar.svg"
-                className="absolute inset-0 w-full h-full rounded-[15px] object-cover"
-                alt="caesar"
-              />
-              <p className="absolute top-0 right-0 p-2 text-sm font-medium leading-none text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
-                $72 per night
-              </p>
-              <div className="absolute bottom-4 left-4">
-                <p className="text-lg font-medium leading-none text-left text-[#152C5B]">
-                  Caesar Palace
-                </p>
-                <p className="mt-1 text-sm font-light leading-none text-left text-[#152C5B]">
-                  Las Vegas, America
-                </p>
-              </div>
-            </div>
+            {properties
+              .filter((prop) => !prop.isMain)
+              .map((prop) => (
+                <div
+                  key={prop.id}
+                  className="relative w-full h-[215px] bg-gradient-to-b from-transparent via-[rgba(196,196,196,0.5)] to-[rgba(196,196,196,0.5)] rounded-[15px]"
+                >
+                  <img
+                    src={prop.image}
+                    className="absolute inset-0 w-full h-full rounded-[15px] object-cover"
+                    alt={prop.name}
+                  />
+                  <p className="absolute top-0 right-0 p-2 text-sm font-medium text-white bg-[#FF498B] rounded-tr-[15px] rounded-bl-[15px]">
+                    ${prop.price} per night
+                  </p>
+                  <div className="absolute bottom-4 left-4">
+                    <p className="text-lg font-medium text-left text-[#152C5B]">
+                      {prop.name}
+                    </p>
+                    <p className="mt-1 text-sm font-light text-left text-[#152C5B]">
+                      {prop.location}
+                    </p>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </section>
